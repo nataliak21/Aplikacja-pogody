@@ -12,7 +12,7 @@ openai.api_key = OPENAI_API_KEY
 
 st.set_page_config(page_title="Pogodowy Asystent", layout="centered")
 st.title("Pogodowy Asystent")
-st.text("Jestem pogodowym asystentem gotowym do twojej dyspozycji. Poniżej wpisz miasto, którego pogoda cię interesuje, a ja podam ci wszystkie najważniejsze informacje odnośnie obecnej pogody.")
+st.text("Jestem pogodowym asystentem gotowym do twojej dyspozycji. Poniżej wpisz miasto, którego pogoda cię interesuje, a ja podam ci wszystkie najważniejsze informacje odnośnie obecnej tam pogody.")
 
 
 if "messages" not in st.session_state:
