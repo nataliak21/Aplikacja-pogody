@@ -12,6 +12,7 @@ openai.api_key = OPENAI_API_KEY
 
 st.set_page_config(page_title="Pogodowy Asystent", layout="centered")
 st.title("Pogodowy Asystent")
+st.text("Jestem pogodowym asystentem gotowym do twojej dyspozycji. Poniżej wpisz miasto, którego pogoda cię interesuje, a ja podam ci wszystkie najważniejsze informacje odnośnie obecnej pogody.")
 
 
 if "messages" not in st.session_state:
@@ -79,10 +80,10 @@ def chat_openai(messages):
     except Exception as e:
         return f"Wystąpił błąd: {e}"
 
-st.session_state.show_chat = st.checkbox("Włącz tryb rozmowy z asystentem pogodowym", value=st.session_state.show_chat)
-
 city = st.text_input("Podaj miasto:", value=st.session_state.city, key="styledcity")
 st.session_state.city = city
+
+st.session_state.show_chat = st.checkbox("Włącz tryb rozmowy z asystentem pogodowym", value=st.session_state.show_chat)
 
 if city and not st.session_state.last_weather:
     with st.spinner("Pobieram dane pogodowe..."):
